@@ -1,20 +1,7 @@
-import {
-  Accordion,
-  AccordionButton,
-  AccordionIcon,
-  AccordionItem,
-  AccordionPanel,
-  Box,
-  Grid,
-} from "@chakra-ui/react";
-import Accordions from "./components/accordions";
+import Questions from "./components/questions";
 
 const Home = ({ qea }: { qea: any }) => {
-  return (
-    <Grid gap={4} overflowY="hidden" h="71vh" position="relative">
-      <Accordions qea={qea} />
-    </Grid>
-  );
+  return <Questions qea={qea} />;
 };
 
 export default Home;

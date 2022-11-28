@@ -10,7 +10,13 @@ export default function LocaleSelector() {
     });
   };
   return (
-    <Select onChange={handleChange} size="xs" h="40px" borderRadius="md" ml="2">
+    <Select
+      onChange={handleChange}
+      size="xs"
+      h="40px"
+      borderRadius="13px"
+      ml="2"
+    >
       <option value="en">en</option>
       <option value="it">it</option>
     </Select>
