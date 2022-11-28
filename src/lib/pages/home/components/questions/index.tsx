@@ -10,12 +10,14 @@ import {
   Grid,
   Portal,
   SimpleGrid,
+  Tag,
   Text,
 } from "@chakra-ui/react";
 import { useStateValue } from "context/stateProvider";
 import useOnClickOutside from "use-onclickoutside";
 import { AnimatePresence, motion } from "framer-motion";
 import { useRef, useState } from "react";
+import QuestionSkeleton from "../skeletons";
 
 export default function Accordions() {
   const [selectedId, setSelectedId] = useState(null);
@@ -26,6 +28,7 @@ export default function Accordions() {
 
   return (
     <Box>
+      <QuestionSkeleton />
       <Box maxH="700px" h="100%" minH="200px" position="relative" top="-40px">
         <AnimatePresence presenceAffectsLayout>
           {selectedId && (
@@ -42,18 +45,47 @@ export default function Accordions() {
                   flexDir="column"
                   w="100%"
                   bg="white"
+                  borderRadius="13px"
+                  boxShadow={
+                    "-18px -20px 20px 0px rgb(0 0 0 / 4%), inset 2px 2px 20px 0px rgb(0 0 0 / 12%), 7px 11px 20px 0px rgb(0 0 0 / 14%)"
+                  }
                   _dark={{
-                    bg: "gray.900",
+                    bg: "gray.700",
                   }}
                   ref={ref}
+                  p="4"
                 >
+                  {selected?.tags?.map((tag: any, i: number) => (
+                    <Tag
+                      position="relative"
+                      key={i}
+                      size="sm"
+                      maxW="50px"
+                      minW="50px"
+                      w="100%"
+                      borderRadius="13px"
+                      colorScheme={tag.color}
+                      mr="2"
+                      mb="2"
+                      display="flex"
+                      alignItems="center"
+                      justifyContent="center"
+                      boxShadow={
+                        "inset 2px 2px 20px 0px rgb(0 0 0 / 12%), 7px 11px 20px 0px rgb(0 0 0 / 14%)"
+                      }
+                    >
+                      {tag.tag}
+                    </Tag>
+                  ))}
+
                   <CloseButton
                     borderRadius="13px"
                     bg="red.400"
                     color="#fff"
                     onClick={() => setSelectedId(null)}
                     position="relative"
-                    right={"-97.26%"}
+                    top="-5"
+                    right={"-98%"}
                   />
                   <Box>
                     <motion.h2>
