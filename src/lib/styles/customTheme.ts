@@ -10,6 +10,18 @@ export const theme = extendTheme({
     // }
   },
   config: {
-    initialColorMode: "light",
+    initialColorMode: "dark",
+  },
+  styles: {
+    global: {
+      body: {
+        bg: "gray.300",
+        _dark: {
+          bg: "gray.900",
+          color: "white",
+        },
+        color: "gray.800",
+      },
+    },
   },
 });

@@ -1,5 +1,5 @@
-import { ColorModeScript, theme } from "@chakra-ui/react";
-import React from "react";
+import { ColorModeScript } from "@chakra-ui/react";
+
 import ReactDOM from "react-dom/client";
 
 // fonts
@@ -8,6 +8,7 @@ import "@fontsource/plus-jakarta-sans/latin.css";
 import App from "./App";
 import { StateProvider } from "./context/stateProvider";
 import { resolveUsersAndReturnInitialState, reducer } from "./context/reducers";
+import { theme } from "lib/styles/customTheme";
 
 //create root asynchonously and then render
 const root = ReactDOM.createRoot(

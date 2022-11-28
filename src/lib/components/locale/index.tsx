@@ -11,6 +11,8 @@ export default function LocaleSelector() {
   };
   return (
     <Select
+      variant="filled"
+      value={locale}
       onChange={handleChange}
       size="xs"
       h="40px"

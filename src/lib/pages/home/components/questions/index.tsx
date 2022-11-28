@@ -31,7 +31,6 @@ export default function Accordions() {
           {selectedId && (
             <motion.div layoutId={selectedId}>
               <Flex
-                bg="#00000047"
                 h="100%"
                 w="100%"
                 zIndex={20}
@@ -44,7 +43,7 @@ export default function Accordions() {
                   w="100%"
                   bg="white"
                   _dark={{
-                    bg: "gray.800",
+                    bg: "gray.900",
                   }}
                   ref={ref}
                 >
